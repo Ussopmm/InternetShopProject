@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ShopProject
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/shop
+    username: postgres
+    password: Eldos2812
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 8081

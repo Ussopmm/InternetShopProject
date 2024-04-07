@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров &ndash; Сельмаг</title>
+</head>
+<body>
+<a data-th-href="@{/shop/products/new}">+ Создать товар</a>
+<h1>Список товаров</h1>
+<!--<form method="get" data-th-action="@{/catalogue/products/list}">-->
+<!--    <label>Фильтр:<input type="text" name="filter" data-th-value="${filter}">-->
+<!--        <button type="submit">Поиск</button>-->
+<!--    </label>-->
+<!--</form>-->
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Товар</th>
+    </tr>
+    </thead>
+    <tbody>
+<!--    <tr data-th-each="product : ${products}">-->
+<!--        <td data-th-text="${product.id}"></td>-->
+<!--        <td>-->
+<!--            <a th:href="@{/shop/product/{id}(id=product)}">-->
+<!--               data-th-text="${product.productName()}"></a>-->
+<!--        </td>-->
+<!--    </tr>-->
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id()}"></td>
+        <td>
+            <a th:href="@{/shop/product/{id}(id=${product.id()})}"
+            th:text="${product.productName()}"></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
